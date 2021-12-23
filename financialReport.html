@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Event Logger</title>
+        <link rel="stylesheet" type="text/css" href="landingPageCSS.css" media="screen" />
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+<div id="nav-placeholder">
+            <div class="container">
+                <div class="navigation">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="TitanLogo.jpg">
+                                </div>
+                                <span class="title">Titan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange7()" >
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange()" >
+                                <span class="title">Chart of Accounts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange2()" >
+                                <span class="title">Journal Entries</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange3()" >
+                                <span class="title">Event Logger</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange4()" >                
+                                <span class="title">Ledger</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange5()" >
+                                <span class="title">Financial Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange6()" >
+                                <span class="title">Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- main -->
+                <div class="main">
+                    <div class="topbar">
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div> 
+                        <!-- userImg -->
+                        <div class="user">
+                            <img src="user.jpg">
+                        </div>
+                    </div>
+
+    </body>
+    <script>
+            function pageChange()
+            {
+                window.open('http://localhost:8383/Titan/ChartofAccounts.html');
+            }
+            function pageChange2()
+            {
+                window.open('http://localhost:8383/Titan/journalingAndEntries.html');
+            }
+            function pageChange3() {
+                window.open('http://localhost:8383/Titan/eventLogger.html');
+            }
+            function pageChange4() {
+                window.open('http://localhost:8383/Titan/ledger.html');
+            }
+            function pageChange5() {
+                window.open('http://localhost:8383/Titan/financialReports.html');
+            }
+            function pageChange6() {
+                window.open('http://localhost:8383/Titan/signOut.html');
+            }
+            function pageChange7() {
+                window.open('http://localhost:8383/Titan/landingPage.html');
+            }
+        </script>
+        <script>
+            // MenuToggle
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.onclick = function () {
+                navigation.classList.toggle('active');
+                main.classList.toggle('active');
+            }
+            // add hovered class in selected list item
+            let list = document.querySelectorAll('.navigation li');
+
+            function activeLink() {
+                list.forEach((item) =>
+                    item.classList.remove('hovered'));
+                this.classList.add('hovered');
+            }
+            list.forEach((item) =>
+                item.addEventListener('mouseover', activeLink));
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</html>

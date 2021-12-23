@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Titan Accounting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="loginFormcss.css" media="screen" />
+        
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="localStorageScript.js"></script> 
+   
+    </head>
+    
+    
+    <body>
+    <h1>Titan Accounting</h1>
+        <div class ="signUI">
+            
+        <div class = "signIn">
+            <input  type ="text" id="userNameSI" placeholder="User Name">
+            <input  type ="password" id="passwordSI" placeholder="Password">
+            <button  type ="submit" onclick="signIn()"> Sign in </button>
+        </div>
+    
+    <div class = "signUp">
+            <input  type ="text" id="userNameSU" placeholder="User Name">
+            <input  type ="password" id="passwordSU" placeholder="Password">
+            <input  type ="text" id="emailSU" placeholder="Email">
+            <button  type='submit' onclick="signUp()">Sign up </button>
+            <button  type='submit' onclick="deletee()">Clear Local storage </button>
+        </div>
+            
+    </div>
+    </body>
+    <footer>Welcome to the Titan Accounting family! </footer>
+
+
+</html>

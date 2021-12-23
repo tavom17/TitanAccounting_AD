@@ -1,0 +1,66 @@
+table{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid #1828EA;
+    background-color: #1828EA;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    box-shadow: 10px 5px 5px #333;
+    border-radius: 20px;
+
+}
+h1{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+th{
+
+}
+colgroup{
+    border-radius: 20px;
+}
+.coa tr{
+
+}
+tr{
+
+}
+
+.modifyContainer{
+    margin: auto;
+    margin-top: 100px;
+    width: 30%;
+    border-radius: 20px;
+    border: 5px solid #FF4B2B;
+    background-color: #1828EA;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    box-shadow: 10px 5px 5px #333;
+}
+
+
+.modifyContainer label{
+    display: block;
+    padding-top:  10px;
+}
+.adminButtons{
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
+
+}

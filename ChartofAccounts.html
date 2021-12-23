@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Chart of Accounts</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="cOATable.css" media="screen" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="cOATable.js"></script>
+        <link rel="stylesheet" type="text/css" href="landingPageCSS.css" media="screen" />
+    </head>
+    <body>
+        <h1 align = center> Chart of Accounts</h1>
+        <div id="nav-placeholder">
+            <div class="container">
+                <div class="navigation">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="TitanLogo.jpg">
+                                </div>
+                                <span class="title">Titan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange7()" >
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange()" >
+                                <span class="title">Chart of Accounts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange2()" >
+                                <span class="title">Journal Entries</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange3()" >
+                                <span class="title">Event Logger</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange4()" >                
+                                <span class="title">Ledger</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange5()" >
+                                <span class="title">Financial Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick = "pageChange6()" >
+                                <span class="title">Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- main -->
+                <div class="main">
+                    <div class="topbar">
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div> 
+                        <!-- userImg -->
+                        <div class="user">
+                            <img src="user.jpg">
+                        </div>
+                    </div>
+                    <div class="tableContainer" id="tableContainer">
+                        <table id= coa style= "width:100%">
+                            <colgroup>
+                                <col  span="6">
+                                <!-- Setting main groups for the table -->
+                            </colgroup>
+                            <tr style="background-color:#FF4B2B">
+                                <th>Account Name</th>
+                                <th>Code</th>
+                                <th>Financial Statement</th>
+                                <th>Group</th>
+                                <th>Sub-Group</th>
+                                <th>Normally</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class ="modifyContainer" id = modifyContainer>
+                        <label for="aName">Account Name:</label>
+                        <input type="text" id="aName"><br>
+                        <label for="code">Code:</label>
+                        <input type="text" id="code"><br>
+                        <label for="fStatement">Financial Statement:</label>
+                        <input type="text" id="fStatement"><br>
+                        <label for="group">Choose Group:</label>
+                        <input list="groups" id="group" name="group"/>
+                        <datalist id="groups">
+                            <option value="Current Assets" id="ca">
+                            <option value="Long Term Assets" id="lta">
+                            <option value="Current Liabilities" id="cl">
+                            <option value="Long Term Liabilities" id="ltl">
+                            <option value="Equity" id="e">
+                            <option value="Income" id="i">
+                            <option value="Cost of Sales" id="cos">
+                            <option value="Expenses" id="ex">
+                        </datalist><br>
+                        <label for="sGroups">Sub-Groups:</label>
+                        <input list ="cAssets" id="sGroups"><br>
+
+                        <datalist id="cAssets">
+                            <!--Current assets sub groups-->
+                            <option value="Cash and Cash Equivalents">
+                            <option value="Short term marketable securities"> 
+                            <option value="Accounts receivable">
+                            <option value="Inventory">   
+                            <option value ="Other current assets">
+                        </datalist>
+                        <datalist id="ltAssets">
+                            <!--Long term assets sub groups-->
+                            <option value="Long term marketable securities">
+                            <option value="Property, plant and equipment">    
+                            <option value="Goodwill">    
+                            <option value="Intellectual property">    
+                            <option value="Other long term assets"> 
+                        </datalist>
+
+                        <datalist id ="cLiabilities">
+                            <!--Current liabilities sub groups-->
+                            <option value="Notes payable">
+                            <option value="Accounts payable">    
+                            <option value="Other current liabilities">   
+                        </datalist>
+
+                        <datalist id ="ltLiabilities">
+                            <!--Long Term liabilities sub groups-->
+                            <option value="Mortgages">
+                            <option value="Bonds">
+                        </datalist>
+
+                        <datalist id="equity">
+                            <!--Equity-->
+                            <option value="Capital">
+                            <option value="Retained Earnings">
+                        </datalist>
+
+                        <datalist id="income">
+                            <!--Income sub groups-->
+                            <option value="Revenue">
+                            <option value="Other income">
+                        </datalist>
+
+                        <datalist id="expense">
+                            <!--Expense sub groups-->
+                            <option value="Research and development">
+                            <option value="Sales and marketing">    
+                            <option value="General and administrative">    
+                            <option value="Deprecation">    
+                            <option value="Finance costs">
+                            <option value="Income tax expense">
+                        </datalist>
+
+                        <label for="norm">Normally:</label>
+                        <input list="normally" id="norm" name="norm" />
+                        <datalist id="normally">
+                            <option value="Debit">
+                            <option value="Credit">
+                        </datalist><br>
+                    </div>
+
+
+                    <div class="adminButtons">
+                        <!-- admin buttons -->
+                        <button id="addButton" onclick="productUpdate();"> Add<button> 
+                                <button id="editButton">Edit</button>    
+                                <button id="deleteButton"> Delete</button>
+                            
+                                </div>
+                                </body>
+                                <script>
+                                    function pageChange()
+                                    {
+                                        window.open('http://localhost:8383/Titan/ChartofAccounts.html');
+                                    }
+                                    function pageChange2()
+                                    {
+                                        window.open('http://localhost:8383/Titan/journalingAndEntries.html');
+                                    }
+                                    function pageChange3() {
+                                        window.open('http://localhost:8383/Titan/eventLogger.html');
+                                    }
+                                    function pageChange4() {
+                                        window.open('http://localhost:8383/Titan/ledger.html');
+                                    }
+                                    function pageChange5() {
+                                        window.open('http://localhost:8383/Titan/financialReports.html');
+                                    }
+                                    function pageChange6() {
+                                        window.open('http://localhost:8383/Titan/signOut.html');
+                                    }
+                                    function pageChange7() {
+                                        window.open('http://localhost:8383/Titan/landingPage.html');
+                                    }
+                                </script>
+                                <script>
+                                    // MenuToggle
+                                    let toggle = document.querySelector('.toggle');
+                                    let navigation = document.querySelector('.navigation');
+                                    let main = document.querySelector('.main');
+                                    toggle.onclick = function () {
+                                        navigation.classList.toggle('active');
+                                        main.classList.toggle('active');
+                                    }
+                                    // add hovered class in selected list item
+                                    let list = document.querySelectorAll('.navigation li');
+
+                                    function activeLink() {
+                                        list.forEach((item) =>
+                                            item.classList.remove('hovered'));
+                                        this.classList.add('hovered');
+                                    }
+                                    list.forEach((item) =>
+                                        item.addEventListener('mouseover', activeLink));
+                                </script>
+                                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+                                </html>
